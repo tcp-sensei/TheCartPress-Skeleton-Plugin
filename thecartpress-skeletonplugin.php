@@ -32,7 +32,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( ! class_exists( 'TCPSkeletonLoader' ) ) {
 
 /**
- * SkeletonPlugin
+ * Skeleton Plugin Loader
  *
  * Loads the Skeleton plugin, only if TheCartPress is activated
  * @since 1.3.3
