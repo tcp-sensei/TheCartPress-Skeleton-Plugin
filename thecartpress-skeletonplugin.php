@@ -72,7 +72,10 @@ class TCPSkeletonLoader {
 	}
 }
 
+//WordPress hooks
 add_action( 'init'		, array( 'TCPSkeletonLoader', 'init' ) );
+
+//TheCartPress hooks
 add_action( 'tcp_init'	, array( 'TCPSkeletonLoader', 'tcp_init' ) );
 
 /**
