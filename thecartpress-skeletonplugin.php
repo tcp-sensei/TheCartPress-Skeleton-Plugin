@@ -29,7 +29,7 @@ Parent: thecartpress
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( ! class_exists( 'TCPSkeletonPlugin' ) ) {
+if ( ! class_exists( 'TCPSkeletonLoader' ) ) {
 
 /**
  * SkeletonPlugin
@@ -37,7 +37,7 @@ if ( ! class_exists( 'TCPSkeletonPlugin' ) ) {
  * Loads the Skeleton plugin, only if TheCartPress is activated
  * @since 1.3.3
  */
-class TCPSkeletonPlugin {
+class TCPSkeletonLoader {
 
 	/**
 	 * Checks if TheCartPress is activated
@@ -72,8 +72,8 @@ class TCPSkeletonPlugin {
 	}
 }
 
-add_action( 'init'		, array( 'TCPSkeletonPlugin', 'init' ) );
-add_action( 'tcp_init'	, array( 'TCPSkeletonPlugin', 'tcp_init' ) );
+add_action( 'init'		, array( 'TCPSkeletonLoader', 'init' ) );
+add_action( 'tcp_init'	, array( 'TCPSkeletonLoader', 'tcp_init' ) );
 
 /**
  * Loads the skeleton payment/shipping plugin
@@ -87,14 +87,14 @@ function tcp_load_skeleton_plugin() {
 	 *
 	 * @since 1.3.3
 	 */
-	class TCPSkeleton extends TCP_Plugin {
+	class TCPSkeletonPlugin extends TCP_Plugin {
 
 		function getTitle() {
 			return 'Skeleton';
 		}
 	
 	}
-	tcp_register_payment_plugin( 'TCPSkeleton' );
+	tcp_register_payment_plugin( 'TCPSkeletonPlugin' );
 	//tcp_register_shipping_plugin( 'TCPSkeleton' );
 }
 } // class_exists check
